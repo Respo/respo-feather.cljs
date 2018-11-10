@@ -1,0 +1,9 @@
+
+{:pom {:group-id "respo",
+       :artifact-id "feather",
+       :version "0.1.0",
+       :name "Feather icon component in Respo"}
+ :packaging {:jar {:enabled true
+                   :remote-repository {:id "clojars"
+                                       :url "https://clojars.org/repo"}}}
+ :scm {:enabled true}}

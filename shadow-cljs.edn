@@ -1,0 +1,31 @@
+
+{:source-paths ["src" "cli"]
+ :dependencies [[mvc-works/hsl          "0.1.2"]
+                [mvc-works/shell-page   "0.1.9"]
+                [respo                  "0.10.0"]
+                [respo/ui               "0.3.9"]
+                [respo/alerts           "0.3.8"]
+                [respo/value            "0.2.5"]
+                [respo/markdown         "0.2.4"]
+                [respo/reel             "0.3.4"]
+                [org.clojure/core.incubator "0.1.4"]]
+ :repositories {"central" {:url "https://maven.aliyun.com/nexus/content/groups/public/"}
+                "clojars" {:url "https://mirrors.ustc.edu.cn/clojars/"}}
+ :open-file-command ["subl" ["%s:%s:%s" :file :line :column]]
+ :socket-repl {:port 0}
+ :builds {:client {:target :browser
+                   :output-dir "target/"
+                   :asset-path "./"
+                   :modules {:client {:init-fn feather.main/main!}}
+                   :devtools {:after-load feather.main/reload!
+                              :http-root "target"
+                              :http-port 7000
+                              :loader-mode :eval}
+                   :compiler-options {:infer-externs :auto}
+                   :release {:output-dir "dist/"
+                             :module-hash-names 8
+                             :build-options {:manifest-name "assets.edn"}}}
+          :page {:target :node-script
+                 :output-to "target/page.js"
+                 :main feather.page/main!
+                 :devtools {:after-load feather.page/main!}}}}
