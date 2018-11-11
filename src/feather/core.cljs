@@ -22,14 +22,13 @@
  (let [icon-name (name icon), obj (aget (.-icons feather-icons) icon-name)]
    (if (some? obj)
      (i
-      (merge
-       {:style (merge style-base style),
-        :innerHTML (if (some? obj)
-          (.toSvg
-           obj
-           (clj->js
-            {:width (:font-size style), :height (:font-size style), :color (:color style)})))}
-       (when (fn? on-click) {:on-click on-click})))
+      {:style (merge style-base style),
+       :innerHTML (if (some? obj)
+         (.toSvg
+          obj
+          (clj->js
+           {:width (:font-size style), :height (:font-size style), :color (:color style)}))),
+       :on-click on-click})
      (do
       (.error js/console "No icon named:" (name icon))
       (span

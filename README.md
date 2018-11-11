@@ -7,7 +7,7 @@ Respo feather
 [![Clojars Project](https://img.shields.io/clojars/v/respo/feather.svg)](https://clojars.org/respo/feather)
 
 ```edn
-[respo/feather "0.1.0"]
+[respo/feather "0.1.1"]
 ```
 
 Usage:
