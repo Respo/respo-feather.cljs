@@ -18,7 +18,7 @@ npm install feather-icons
 
 ```clojure
 (feather.core/comp-i icon font-size color)
-(feather.core/comp-i icon style-object on-click)
+(feather.core/comp-icon icon style-object on-click)
 ```
 
 Availables icons can be found on:
