@@ -7,8 +7,7 @@
             [reel.schema :as reel-schema]
             [cljs.reader :refer [read-string]]
             [feather.config :as config]
-            [feather.util :refer [get-env!]]
-            [build.util :refer [get-ip!]])
+            [cumulo-util.build :refer [get-ip!]])
   (:require-macros [clojure.core.strint :refer [<<]]))
 
 (def base-info
@@ -23,13 +22,11 @@
      :scripts ["/client.js"],
      :inline-styles []})))
 
-(def local-bundle? (= "local-bundle" (get-env! "mode")))
-
 (defn prod-page []
   (let [reel (-> reel-schema/reel (assoc :base schema/store) (assoc :store schema/store))
         html-content (make-string (comp-container reel))
         assets (read-string (slurp "dist/assets.edn"))
-        cdn (if local-bundle? "" (:cdn-url config/site))
+        cdn (if config/cdn? (:cdn-url config/site) "")
         prefix-cdn (fn [x] (str cdn x))]
     (make-page
      html-content
@@ -41,6 +38,7 @@
        :inline-styles [(slurp "./entry/main.css")]}))))
 
 (defn main! []
-  (if (contains? config/bundle-builds (get-env! "mode"))
-    (spit "dist/index.html" (prod-page))
-    (spit "target/index.html" (dev-page))))
+  (println "Running mode:" (if config/dev? "dev" "release"))
+  (if config/dev?
+    (spit "target/index.html" (dev-page))
+    (spit "dist/index.html" (prod-page))))
