@@ -292,10 +292,10 @@ evp_bytestokey@^1.0.0, evp_bytestokey@^1.0.3:
     md5.js "^1.3.4"
     safe-buffer "^5.1.1"
 
-feather-icons@^4.15.0:
-  version "4.15.0"
-  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.15.0.tgz#8a93268ed856b5cdd5a71a9c0898c33433891225"
-  integrity sha512-CHzWX/oxwziLa2qucblNsx08MvyZkws6+vNxARydnBIW0ETWJMAuxuKsPH2RCRUSdnNaFd43wyRpxMjp4Pz42g==
+feather-icons@^4.19.0:
+  version "4.19.0"
+  resolved "https://registry.yarnpkg.com/feather-icons/-/feather-icons-4.19.0.tgz#320db46860826bbe37e824e0e759cb4a1d9de6f0"
+  integrity sha512-eaY8A/Y2lLukjinbWYrCxMof7EiFUgEXqYLqInsNFJtxMoLZf0znhK+y93YMojsB/etKMzj8PISnI1+OADJ5Zw==
   dependencies:
     classnames "^2.2.5"
     core-js "^2.5.3"
@@ -660,10 +660,10 @@ shadow-cljs-jar@1.3.0:
   resolved "https://registry.yarnpkg.com/shadow-cljs-jar/-/shadow-cljs-jar-1.3.0.tgz#e25c4fa57c0b405096250884b164c112654a06a3"
   integrity sha512-KReNVgFVM2ZPPGCP8rsCPqtlee/+SwXyoeEqbAXBO7jlpoNnNee2x4fiRg/Pr/vXGEkV/Ez5l4qdNSU1Na+1Jg==
 
-shadow-cljs@^2.7.24:
-  version "2.7.24"
-  resolved "https://registry.yarnpkg.com/shadow-cljs/-/shadow-cljs-2.7.24.tgz#d11246f51b1ee55ccea833e0ab20e5a4f9867245"
-  integrity sha512-Sa4Soq6NEEFNRgIOGH9aGSYk1pt0/h7zdhzu6MGPmHxyvGAy/Nyl+C+v0OQuRVZsoIC7oMWR3LGTGY5k1ubDtw==
+shadow-cljs@^2.8.11:
+  version "2.8.11"
+  resolved "https://registry.yarnpkg.com/shadow-cljs/-/shadow-cljs-2.8.11.tgz#087c647e77b9c97e211e4f392c940e6378959f45"
+  integrity sha512-D/mXNdj9sKA6nuOQq93eWEC2WvrmysX0R70BlMP+VjYFK8T/j8x99vKZ2CXlAICE8yzURhaKRCa6sDR1XDyUHQ==
   dependencies:
     mkdirp "^0.5.1"
     node-libs-browser "^2.0.0"
