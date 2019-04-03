@@ -23,12 +23,19 @@
     {:style (merge ui/global ui/fullscreen)}
     (if (some? (:icon store))
       (div
-       {:style (merge ui/row-center {:padding "16px"})}
+       {:style (merge
+                ui/row-center
+                {:padding "16px",
+                 :position :fixed,
+                 :top 0,
+                 :width "100%",
+                 :background-color (hsl 0 0 100 0.8),
+                 :border-bottom (str "1px solid " (hsl 0 0 92))})}
        (<> (str "Copied " ":" (:icon store)))
        (=< 16 nil)
        (comp-i (str (:icon store)) 40 "black")))
     (list->
-     {:style {:width "100%", :padding 16}}
+     {:style {:width "100%", :padding 16, :overflow :auto, :margin-top 80}}
      (->> icons
           (map
            (fn [icon]
