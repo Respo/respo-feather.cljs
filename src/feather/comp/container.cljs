@@ -2,9 +2,7 @@
 (ns feather.comp.container
   (:require [hsl.core :refer [hsl]]
             [respo-ui.core :as ui]
-            [respo.core
-             :refer
-             [defcomp cursor-> list-> action-> mutation-> <> div button textarea span]]
+            [respo.core :refer [defcomp >> list-> <> div button textarea span]]
             [respo.comp.space :refer [=<]]
             [reel.comp.reel :refer [comp-reel]]
             [respo-md.comp.md :refer [comp-md]]
@@ -48,4 +46,4 @@
                 :on-click (fn [event d! m!] (copy! (str ":" icon)) (d! :exhibit icon))}
                (comp-icon icon {:font-size 24, :color (hsl 200 80 60)} nil)
                (<> icon {:font-size 12, :color (hsl 0 0 80), :white-space :nowrap}))]))))
-    (when dev? (cursor-> :reel comp-reel states reel {})))))
+    (when dev? (comp-reel (>> states :reel) reel {})))))
