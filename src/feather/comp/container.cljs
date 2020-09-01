@@ -43,7 +43,7 @@
                         ui/center
                         {:display :inline-flex, :width 80, :height 80, :cursor :pointer}
                         (if (= icon (:icon store)) {:background-color (hsl 0 0 95)})),
-                :on-click (fn [event d! m!] (copy! (str ":" icon)) (d! :exhibit icon))}
+                :on-click (fn [event d!] (copy! (str ":" icon)) (d! :exhibit icon))}
                (comp-icon icon {:font-size 24, :color (hsl 200 80 60)} nil)
                (<> icon {:font-size 12, :color (hsl 0 0 80), :white-space :nowrap}))]))))
     (when dev? (comp-reel (>> states :reel) reel {})))))
